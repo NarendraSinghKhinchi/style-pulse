@@ -39,10 +39,10 @@ export function Footer() {
                     <div className="space-y-6">
                         <h4 className="font-bold uppercase tracking-widest text-sm">Company</h4>
                         <div className="flex flex-col gap-4 text-muted-foreground">
-                            <Link href="#" className="hover:text-foreground transition-colors">About</Link>
-                            <Link href="#" className="hover:text-foreground transition-colors">Features</Link>
-                            <Link href="#" className="hover:text-foreground transition-colors">Works</Link>
-                            <Link href="#" className="hover:text-foreground transition-colors">Career</Link>
+                            <Link href="/" className="hover:text-foreground transition-colors">About</Link>
+                            <Link href="/category/casual" className="hover:text-foreground transition-colors">Features</Link>
+                            <Link href="/category/formal" className="hover:text-foreground transition-colors">Works</Link>
+                            <Link href="/category/gym" className="hover:text-foreground transition-colors">Career</Link>
                         </div>
                     </div>
                     <div className="space-y-6">

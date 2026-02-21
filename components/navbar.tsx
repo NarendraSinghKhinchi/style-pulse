@@ -32,10 +32,10 @@ export function Navbar() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex items-center gap-6">
-                    <Link href="/shop" className="text-sm font-medium hover:text-primary/70 transition-colors">Shop</Link>
-                    <Link href="/on-sale" className="text-sm font-medium hover:text-primary/70 transition-colors">On Sale</Link>
-                    <Link href="/new-arrivals" className="text-sm font-medium hover:text-primary/70 transition-colors">New Arrivals</Link>
-                    <Link href="/brands" className="text-sm font-medium hover:text-primary/70 transition-colors">Brands</Link>
+                    <Link href="/category/casual" className="text-sm font-medium hover:text-primary/70 transition-colors">Shop</Link>
+                    <Link href="/category/formal" className="text-sm font-medium hover:text-primary/70 transition-colors">On Sale</Link>
+                    <Link href="/category/gym" className="text-sm font-medium hover:text-primary/70 transition-colors">New Arrivals</Link>
+                    <Link href="/" className="text-sm font-medium hover:text-primary/70 transition-colors">Brands</Link>
                 </div>
 
                 {/* Search Bar - Desktop */}
@@ -74,10 +74,10 @@ export function Navbar() {
                         </button>
                     </div>
                     <div className="flex flex-col gap-6">
-                        <Link href="/shop" className="text-xl font-medium" onClick={() => setIsMobileMenuOpen(false)}>Shop</Link>
-                        <Link href="/on-sale" className="text-xl font-medium" onClick={() => setIsMobileMenuOpen(false)}>On Sale</Link>
-                        <Link href="/new-arrivals" className="text-xl font-medium" onClick={() => setIsMobileMenuOpen(false)}>New Arrivals</Link>
-                        <Link href="/brands" className="text-xl font-medium" onClick={() => setIsMobileMenuOpen(false)}>Brands</Link>
+                        <Link href="/category/casual" className="text-xl font-medium" onClick={() => setIsMobileMenuOpen(false)}>Shop</Link>
+                        <Link href="/category/formal" className="text-xl font-medium" onClick={() => setIsMobileMenuOpen(false)}>On Sale</Link>
+                        <Link href="/category/gym" className="text-xl font-medium" onClick={() => setIsMobileMenuOpen(false)}>New Arrivals</Link>
+                        <Link href="/" className="text-xl font-medium" onClick={() => setIsMobileMenuOpen(false)}>Brands</Link>
                     </div>
                 </div>
             )}

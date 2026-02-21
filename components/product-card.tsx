@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils"
 import { IconStar, IconStarFilled, IconStarHalfFilled } from "@tabler/icons-react"
 import Image from "next/image"
+import Link from "next/link"
 
 interface ProductCardProps {
     id: string
@@ -14,6 +15,7 @@ interface ProductCardProps {
 }
 
 export function ProductCard({
+    id,
     name,
     price,
     originalPrice,
@@ -41,7 +43,7 @@ export function ProductCard({
     }
 
     return (
-        <div className={cn("group cursor-pointer space-y-4", className)}>
+        <Link href={`/product/${id}`} className={cn("group cursor-pointer space-y-4 block", className)}>
             <div className="relative aspect-square overflow-hidden rounded-[20px] bg-secondary">
                 <Image
                     src={image}
@@ -68,6 +70,6 @@ export function ProductCard({
                     )}
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
