@@ -52,10 +52,10 @@ export function Navbar() {
                     <button className="md:hidden p-2">
                         <IconSearch className="h-6 w-6" />
                     </button>
-                    <button className="p-2 relative">
+                    <Link href="/cart" className="p-2 relative">
                         <IconShoppingCart className="h-6 w-6" />
-                        <span className="absolute top-1 right-1 bg-foreground text-background text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">2</span>
-                    </button>
+                        <span className="absolute top-1 right-1 bg-foreground text-background text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">3</span>
+                    </Link>
                     <button className="p-2">
                         <IconUser className="h-6 w-6" />
                     </button>
