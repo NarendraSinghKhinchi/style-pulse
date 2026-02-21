@@ -27,7 +27,7 @@ export function Navbar() {
 
                 {/* Logo */}
                 <Link href="/" className="text-2xl sm:text-3xl font-extrabold tracking-tighter uppercase mr-auto lg:mr-0">
-                    SHOP.CO
+                    STYLE_PULSE
                 </Link>
 
                 {/* Desktop Navigation */}
@@ -67,7 +67,7 @@ export function Navbar() {
                 <div className="fixed inset-0 z-50 bg-background lg:hidden flex flex-col p-6">
                     <div className="flex items-center justify-between mb-10">
                         <Link href="/" className="text-2xl font-extrabold tracking-tighter uppercase">
-                            SHOP.CO
+                            STYLE_PULSE
                         </Link>
                         <button onClick={() => setIsMobileMenuOpen(false)}>
                             <IconX className="h-7 w-7" />

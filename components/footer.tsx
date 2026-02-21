@@ -13,7 +13,7 @@ export function Footer() {
                 {/* Brand and Description */}
                 <div className="max-w-xs space-y-6">
                     <Link href="/" className="text-3xl font-extrabold tracking-tighter uppercase">
-                        SHOP.CO
+                        STYLE_PULSE
                     </Link>
                     <p className="text-muted-foreground leading-relaxed">
                         We have clothes that suits your style and which you&apos;re proud to wear. From women to men.
@@ -78,7 +78,7 @@ export function Footer() {
             {/* Bottom Bar */}
             <div className="border-t bg-secondary/80">
                 <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
-                    <p className="text-muted-foreground text-sm">Shop.co © 2000-2023, All Rights Reserved</p>
+                    <p className="text-muted-foreground text-sm">STYLE_PULSE © 2000-2023, All Rights Reserved</p>
                     <div className="flex items-center gap-4">
                         {/* Mock payment icons */}
                         <div className="h-8 w-12 bg-white rounded border flex items-center justify-center font-bold text-[10px] text-blue-800">VISA</div>
