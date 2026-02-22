@@ -1,31 +1,40 @@
+"use client"
+
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { TESTIMONIALS } from "@/lib/constants"
-import { IconArrowLeft, IconArrowRight, IconCircleCheckFilled, IconStarFilled } from "@tabler/icons-react"
+import { IconCircleCheckFilled, IconStarFilled } from "@tabler/icons-react"
+import Autoplay from "embla-carousel-autoplay"
 
 export function TestimonialSection() {
     return (
         <section className="py-12 sm:py-20 overflow-hidden">
-            <div className="container mx-auto px-4 space-y-12 sm:space-y-16">
+            <div className="container max-w-7xl mx-auto px-4 space-y-12 sm:space-y-16">
                 <div className="flex items-end justify-between">
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter max-w-lg">
                         Our Happy Customers
                     </h2>
-                    <div className="flex gap-4">
-                        <button className="h-12 w-12 rounded-full border flex items-center justify-center hover:bg-foreground hover:text-background transition-colors">
-                            <IconArrowLeft className="h-6 w-6" />
-                        </button>
-                        <button className="h-12 w-12 rounded-full border flex items-center justify-center hover:bg-foreground hover:text-background transition-colors">
-                            <IconArrowRight className="h-6 w-6" />
-                        </button>
-                    </div>
                 </div>
 
-                <div className="flex overflow-x-auto gap-6 pb-8 no-scrollbar scroll-smooth snap-x">
-                    {TESTIMONIALS.map((testimonial) => (
-                        <TestimonialCard key={testimonial.id} {...testimonial} />
-                    ))}
-                    {TESTIMONIALS.map((testimonial) => (
-                        <TestimonialCard key={`dup-${testimonial.id}`} {...testimonial} />
-                    ))}
+                <div className="relative">
+                    <Carousel
+                        className="w-full"
+                        opts={{
+                            loop: true,
+                        }}
+                        plugins={[
+                            Autoplay({
+                                delay: 1000,
+                            }),
+                        ]}
+                    >
+                        <CarouselContent className="ml-0">
+                            {TESTIMONIALS.map((testimonial) => (
+                                <CarouselItem key={testimonial.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                                    <TestimonialCard {...testimonial} />
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                    </Carousel>
                 </div>
             </div>
         </section>
@@ -34,7 +43,7 @@ export function TestimonialSection() {
 
 function TestimonialCard({ name, rating, verified, text }: { name: string, rating: number, verified: boolean, text: string }) {
     return (
-        <div className="min-w-[340px] md:min-w-[400px] border rounded-[20px] p-6 sm:p-8 space-y-4 snap-start">
+        <div className="border rounded-[20px] p-6 sm:p-8 space-y-4 h-full">
             <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
                     <IconStarFilled key={i} className="h-5 w-5 text-yellow-500" />

@@ -30,17 +30,17 @@ export const PRODUCTS: Product[] = [
     rating: 4.5,
     image: "https://images.unsplash.com/photo-1549063523-8758397a2334?q=80&w=1000&auto=format&fit=crop",
     images: [
-        "https://images.unsplash.com/photo-1549063523-8758397a2334?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1000&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1549063523-8758397a2334?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1000&auto=format&fit=crop"
     ],
     description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     category: "New Arrivals",
     discount: "-40%",
     colors: [
-        { name: "Olive", hex: "#4F5339" },
-        { name: "Cyan", hex: "#314F4F" },
-        { name: "Navy", hex: "#31344F" }
+      { name: "Olive", hex: "#4F5339" },
+      { name: "Cyan", hex: "#314F4F" },
+      { name: "Navy", hex: "#31344F" }
     ],
     sizes: ["Small", "Medium", "Large", "X-Large"]
   },
@@ -177,55 +177,79 @@ export const TESTIMONIALS = [
     text: "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon STYLE_PULSE. The selection of clothes is not only diverse but also on-point with the latest trends.",
     date: "August 16, 2023"
   },
+  {
+    id: "4",
+    name: "Emily R.",
+    rating: 5,
+    verified: true,
+    text: "I've been a fashion enthusiast for years, but never found a platform that seamlessly connects me with designers from around the world. STYLE_PULSE is a game-changer.",
+    date: "August 17, 2023"
+  },
+  {
+    id: "5",
+    name: "Michael S.",
+    rating: 5,
+    verified: true,
+    text: "The attention to detail and the quality of the clothes are outstanding. Each piece is a work of art, and I'm confident that I'll be wearing them for years to come.",
+    date: "August 18, 2023"
+  },
+  {
+    id: "6",
+    name: "Olivia T.",
+    rating: 5,
+    verified: true,
+    text: "The range of styles and designs is impressive. From classic to trendy, there's something for everyone. STYLE_PULSE is a true gem in the world of fashion.",
+    date: "August 19, 2023"
+  },
 ];
 
 export const REVIEWS = [
-    {
-        id: "1",
-        name: "Samantha D.",
-        rating: 5,
-        verified: true,
-        text: "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt.",
-        date: "August 14, 2023"
-    },
-    {
-        id: "2",
-        name: "Alex M.",
-        rating: 5,
-        verified: true,
-        text: "The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. Being an AI designer myself, I'm quite picky about aesthetics, and this shirt definitely gets a thumbs up from me.",
-        date: "August 15, 2023"
-    },
-    {
-        id: "3",
-        name: "Ethan R.",
-        rating: 5,
-        verified: true,
-        text: "This t-shirt is a must-have for anyone who appreciates good design. The minimalist yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt.",
-        date: "August 16, 2023"
-    },
-    {
-        id: "4",
-        name: "Olivia P.",
-        rating: 5,
-        verified: true,
-        text: "As a UI/UX designer, I value simplicity and functionality. This t-shirt not only represents those principles but also looks great when I'm working. It's the designer's proud their creativity into making this t-shirt stand out!",
-        date: "August 17, 2023"
-    },
-    {
-        id: "5",
-        name: "Liam K.",
-        rating: 5,
-        verified: true,
-        text: "This t-shirt is a fusion of comfort and creativity. The fabric is soft and the design truly reflects about the designers skill. It's like wearing the piece of art that reflects my passion for both design and fashion!",
-        date: "August 18, 2023"
-    },
-    {
-        id: "6",
-        name: "Ava H.",
-        rating: 5,
-        verified: true,
-        text: "I'm not just wearing a t-shirt, I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter!",
-        date: "August 19, 2023"
-    }
+  {
+    id: "1",
+    name: "Samantha D.",
+    rating: 5,
+    verified: true,
+    text: "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt.",
+    date: "August 14, 2023"
+  },
+  {
+    id: "2",
+    name: "Alex M.",
+    rating: 5,
+    verified: true,
+    text: "The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. Being an AI designer myself, I'm quite picky about aesthetics, and this shirt definitely gets a thumbs up from me.",
+    date: "August 15, 2023"
+  },
+  {
+    id: "3",
+    name: "Ethan R.",
+    rating: 5,
+    verified: true,
+    text: "This t-shirt is a must-have for anyone who appreciates good design. The minimalist yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt.",
+    date: "August 16, 2023"
+  },
+  {
+    id: "4",
+    name: "Olivia P.",
+    rating: 5,
+    verified: true,
+    text: "As a UI/UX designer, I value simplicity and functionality. This t-shirt not only represents those principles but also looks great when I'm working. It's the designer's proud their creativity into making this t-shirt stand out!",
+    date: "August 17, 2023"
+  },
+  {
+    id: "5",
+    name: "Liam K.",
+    rating: 5,
+    verified: true,
+    text: "This t-shirt is a fusion of comfort and creativity. The fabric is soft and the design truly reflects about the designers skill. It's like wearing the piece of art that reflects my passion for both design and fashion!",
+    date: "August 18, 2023"
+  },
+  {
+    id: "6",
+    name: "Ava H.",
+    rating: 5,
+    verified: true,
+    text: "I'm not just wearing a t-shirt, I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter!",
+    date: "August 19, 2023"
+  }
 ];
