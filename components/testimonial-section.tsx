@@ -23,7 +23,7 @@ export function TestimonialSection() {
                         }}
                         plugins={[
                             Autoplay({
-                                delay: 1000,
+                                delay: 4000,
                             }),
                         ]}
                     >
