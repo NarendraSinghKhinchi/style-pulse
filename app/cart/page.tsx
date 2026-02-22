@@ -36,10 +36,10 @@ export default function CartPage() {
     ]
 
     return (
-        <div className="flex min-h-screen flex-col">
+        <div className="flex min-h-screen  flex-col">
             <Navbar />
             <main className="flex-1">
-                <div className="container mx-auto px-4 pb-12 sm:pb-20">
+                <div className="container max-w-7xl mx-auto px-4 pb-8">
                     <Breadcrumbs items={breadcrumbItems} />
 
                     <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter mb-8 sm:mb-10">
@@ -63,7 +63,7 @@ export default function CartPage() {
                     </div>
                 </div>
 
-                <div className="relative -mb-[120px] mt-20">
+                <div className="relative -mb-[120px] mt-10 md:mt-16">
                     <Newsletter />
                 </div>
             </main>
