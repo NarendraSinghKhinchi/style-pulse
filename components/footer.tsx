@@ -5,11 +5,11 @@ export function Footer() {
     return (
         <footer className="bg-secondary/50 pt-20 mt-20 relative overflow-hidden">
             {/* Newsletter Section */}
-            <div className="container mx-auto px-4 absolute -top-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 hidden lg:block">
+            <div className="container max-w-7xl mx-auto px-4 absolute -top-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 hidden lg:block">
                 {/* Newsletter content will be handled by a separate section for better mobile handling, but this is a placeholder for the "floating" effect if desired */}
             </div>
 
-            <div className="container mx-auto px-4 py-12 lg:py-20 flex flex-col lg:flex-row gap-12 lg:gap-24 relative z-0">
+            <div className="container max-w-7xl mx-auto px-4 py-12 lg:py-20 flex flex-col lg:flex-row gap-12 lg:gap-24 relative z-0">
                 {/* Brand and Description */}
                 <div className="max-w-xs space-y-6">
                     <Link href="/" className="text-3xl font-extrabold tracking-tighter uppercase">
@@ -77,7 +77,7 @@ export function Footer() {
 
             {/* Bottom Bar */}
             <div className="border-t bg-secondary/80">
-                <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="container max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
                     <p className="text-muted-foreground text-sm">STYLE_PULSE © 2000-2023, All Rights Reserved</p>
                     <div className="flex items-center gap-4">
                         {/* Mock payment icons */}

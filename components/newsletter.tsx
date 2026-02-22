@@ -4,7 +4,7 @@ import { IconMail } from "@tabler/icons-react"
 
 export function Newsletter() {
     return (
-        <section className="container mx-auto px-4 relative z-20">
+        <section className="container max-w-7xl mx-auto px-4 relative z-20">
             <div className="bg-foreground text-background rounded-[20px] p-8 sm:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-24">
                 <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter flex-1 leading-[1.1]">
                     STAY UP TO DATE ABOUT OUR LATEST OFFERS

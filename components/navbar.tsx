@@ -10,35 +10,26 @@ export function Navbar() {
 
     return (
         <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            {/* Top Banner */}
             <div className="bg-foreground text-background py-2 text-center text-xs sm:text-sm px-4">
                 <span>Sign up and get 20% off to your first order. </span>
                 <button className="underline font-medium decoration-1 underline-offset-4">Sign Up Now</button>
             </div>
-
-            <div className="container mx-auto px-4 h-16 sm:h-20 flex items-center gap-4 lg:gap-10">
-                {/* Mobile menu trigger */}
+            <div className="container max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between gap-4 lg:gap-10">
                 <button
                     className="lg:hidden"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     <IconMenu2 className="h-6 w-6" />
                 </button>
-
-                {/* Logo */}
                 <Link href="/" className="text-2xl sm:text-3xl font-extrabold tracking-tighter uppercase mr-auto lg:mr-0">
                     STYLE_PULSE
                 </Link>
-
-                {/* Desktop Navigation */}
                 <div className="hidden lg:flex items-center gap-6">
                     <Link href="/category/casual" className="text-sm font-medium hover:text-primary/70 transition-colors">Shop</Link>
                     <Link href="/category/formal" className="text-sm font-medium hover:text-primary/70 transition-colors">On Sale</Link>
                     <Link href="/category/gym" className="text-sm font-medium hover:text-primary/70 transition-colors">New Arrivals</Link>
                     <Link href="/" className="text-sm font-medium hover:text-primary/70 transition-colors">Brands</Link>
                 </div>
-
-                {/* Search Bar - Desktop */}
                 <div className="hidden md:flex flex-1 max-w-md relative group">
                     <IconSearch className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-foreground transition-colors" />
                     <Input
@@ -46,8 +37,6 @@ export function Navbar() {
                         className="pl-10 bg-secondary border-none h-11 rounded-full focus-visible:ring-1 focus-visible:ring-ring"
                     />
                 </div>
-
-                {/* Actions */}
                 <div className="flex items-center gap-1 sm:gap-3">
                     <button className="md:hidden p-2">
                         <IconSearch className="h-6 w-6" />
@@ -61,8 +50,6 @@ export function Navbar() {
                     </button>
                 </div>
             </div>
-
-            {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
                 <div className="fixed inset-0 z-50 bg-background lg:hidden flex flex-col p-6">
                     <div className="flex items-center justify-between mb-10">

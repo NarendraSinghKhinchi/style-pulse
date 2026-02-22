@@ -14,6 +14,7 @@ export default function Page() {
             <main className="flex-1">
                 <Hero />
                 <BrandBar />
+                <div className="mt-3 md:mt-8"></div>
                 <ProductGridSection title="New Arrivals" category="New Arrivals" />
                 <ProductGridSection title="Top Selling" category="Top Selling" />
                 <CategoryGrid />

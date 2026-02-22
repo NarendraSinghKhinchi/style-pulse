@@ -23,7 +23,6 @@ export function TestimonialSection() {
                     {TESTIMONIALS.map((testimonial) => (
                         <TestimonialCard key={testimonial.id} {...testimonial} />
                     ))}
-                    {/* Duplicating for mock carousel effect */}
                     {TESTIMONIALS.map((testimonial) => (
                         <TestimonialCard key={`dup-${testimonial.id}`} {...testimonial} />
                     ))}

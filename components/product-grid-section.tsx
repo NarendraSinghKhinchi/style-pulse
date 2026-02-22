@@ -11,12 +11,11 @@ export function ProductGridSection({ title, category }: ProductGridSectionProps)
     const filteredProducts = PRODUCTS.filter((p) => p.category === category)
 
     return (
-        <section className="py-16 sm:py-24">
-            <div className="container mx-auto px-4 space-y-12 sm:space-y-16">
-                <h2 className="text-3xl sm:text-5xl font-black text-center uppercase tracking-tighter">
+        <section className="py-8">
+            <div className="container max-w-7xl mx-auto px-4 space-y-12 sm:space-y-16">
+                <h2 className="text-3xl sm:text-5xl font-black text-center uppercase tracking-wide">
                     {title}
                 </h2>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                     {filteredProducts.map((product) => (
                         <ProductCard
@@ -25,14 +24,13 @@ export function ProductGridSection({ title, category }: ProductGridSectionProps)
                         />
                     ))}
                 </div>
-
                 <div className="flex justify-center pt-4">
                     <Button variant="outline" className="w-full sm:w-56 h-14 rounded-full text-base font-bold">
                         View All
                     </Button>
                 </div>
             </div>
-            <div className="container mx-auto px-4 mt-20">
+            <div className="container mx-auto px-4 mt-5 md:mt-8">
                 <hr className="border-foreground/10" />
             </div>
         </section>

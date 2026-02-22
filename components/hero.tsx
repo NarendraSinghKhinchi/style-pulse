@@ -4,7 +4,7 @@ import Image from "next/image"
 export function Hero() {
     return (
         <section className="bg-[#F2F0F1] overflow-hidden lg:h-[calc(100vh-120px)] flex flex-col lg:flex-row items-center relative">
-            <div className="container mx-auto px-4 flex-1 pt-12 lg:pt-0 z-10 flex flex-col justify-center">
+            <div className="container mx-auto max-w-7xl px-4 flex-1 pt-12 lg:pt-0 z-10 flex flex-col justify-center">
                 <div className="max-w-xl space-y-6 lg:space-y-10">
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] uppercase tracking-tighter">
                         Find clothes that matches your style
@@ -41,7 +41,7 @@ export function Hero() {
             {/* Hero Image */}
             <div className="relative flex-1 w-full h-[500px] lg:h-full mt-10 lg:mt-0 lg:absolute right-0 top-0 lg:w-1/2">
                 <Image
-                    src="https://images.unsplash.com/photo-1549063523-8758397a2334?q=80&w=2000&auto=format&fit=crop"
+                    src="/hero_mobile.png"
                     alt="Style Pulse Hero"
                     fill
                     className="object-cover lg:object-contain object-bottom select-none pointer-events-none"
