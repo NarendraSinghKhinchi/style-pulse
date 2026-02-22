@@ -1,14 +1,18 @@
 import { Button } from "@/components/ui/button"
-import { REVIEWS } from "@/lib/constants"
+import { Review } from "@/lib/constants"
 import { IconAdjustmentsHorizontal, IconChevronDown, IconCircleCheckFilled, IconDots, IconStarFilled } from "@tabler/icons-react"
 
-export function ReviewSection() {
+interface ReviewSectionProps {
+    reviews?: Review[]
+}
+
+export function ReviewSection({ reviews = [] }: ReviewSectionProps) {
     return (
         <div className="space-y-8 sm:space-y-12 py-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
                     <h2 className="text-xl sm:text-2xl font-bold">All Reviews</h2>
-                    <span className="text-muted-foreground">({REVIEWS.length})</span>
+                    <span className="text-muted-foreground">({reviews.length})</span>
                 </div>
                 <div className="flex items-center gap-2 sm:gap-4">
                     <Button variant="secondary" className="h-12 w-12 rounded-full p-0">
@@ -25,21 +29,23 @@ export function ReviewSection() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                {REVIEWS.map((review) => (
+                {reviews.map((review) => (
                     <ReviewCard key={review.id} {...review} />
                 ))}
             </div>
 
-            <div className="flex justify-center pt-8">
-                <Button variant="outline" className="h-12 px-10 rounded-full font-bold">
-                    Load More Reviews
-                </Button>
-            </div>
+            {reviews.length > 0 && (
+                <div className="flex justify-center pt-8">
+                    <Button variant="outline" className="h-12 px-10 rounded-full font-bold">
+                        Load More Reviews
+                    </Button>
+                </div>
+            )}
         </div>
     )
 }
 
-function ReviewCard({ name, rating, verified, text, date }: { name: string, rating: number, verified: boolean, text: string, date: string }) {
+function ReviewCard({ name, rating, verified, text, date }: Review) {
     return (
         <div className="border rounded-[20px] p-6 sm:p-8 space-y-4">
             <div className="flex justify-between items-start">

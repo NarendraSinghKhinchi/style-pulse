@@ -6,6 +6,26 @@ export const BRANDS = [
   { name: "Calvin Klein", logo: "/brands/calvin-klein.svg" },
 ];
 
+export interface Review {
+  id: string;
+  name: string;
+  rating: number;
+  verified: boolean;
+  text: string;
+  date: string;
+}
+
+export interface FAQ {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface Specification {
+  label: string;
+  value: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -19,6 +39,9 @@ export interface Product {
   discount?: string;
   colors: { name: string; hex: string }[];
   sizes: string[];
+  reviews?: Review[];
+  faqs?: FAQ[];
+  specifications?: Specification[];
 }
 
 export const PRODUCTS: Product[] = [
@@ -42,7 +65,71 @@ export const PRODUCTS: Product[] = [
       { name: "Cyan", hex: "#314F4F" },
       { name: "Navy", hex: "#31344F" }
     ],
-    sizes: ["Small", "Medium", "Large", "X-Large"]
+    sizes: ["Small", "Medium", "Large", "X-Large"],
+    reviews: [
+      {
+        id: "1",
+        name: "Samantha D.",
+        rating: 5,
+        verified: true,
+        text: "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt.",
+        date: "August 14, 2023"
+      },
+      {
+        id: "2",
+        name: "Alex M.",
+        rating: 5,
+        verified: true,
+        text: "The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. Being an AI designer myself, I'm quite picky about aesthetics, and this shirt definitely gets a thumbs up from me.",
+        date: "August 15, 2023"
+      },
+      {
+        id: "3",
+        name: "Ethan R.",
+        rating: 4,
+        verified: true,
+        text: "This t-shirt is a must-have for anyone who appreciates good design. The minimalist yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt.",
+        date: "August 16, 2023"
+      },
+      {
+        id: "4",
+        name: "Olivia P.",
+        rating: 5,
+        verified: true,
+        text: "As a UI/UX designer, I value simplicity and functionality. This t-shirt not only represents those principles but also looks great when I'm working.",
+        date: "August 17, 2023"
+      }
+    ],
+    faqs: [
+      {
+        id: "1",
+        question: "What material is this t-shirt made from?",
+        answer: "This t-shirt is made from 100% premium cotton, which is soft, breathable, and durable. It's perfect for everyday wear and maintains its quality wash after wash."
+      },
+      {
+        id: "2",
+        question: "How should I care for this t-shirt?",
+        answer: "Wash in cold water with similar colors. Tumble dry on low heat or hang dry to preserve the graphic print. Avoid bleach and iron on reverse side only if needed."
+      },
+      {
+        id: "3",
+        question: "What's the fit like?",
+        answer: "This t-shirt has a classic, regular fit. It's not too tight or too loose, making it comfortable for most body types. See our size guide for detailed measurements."
+      },
+      {
+        id: "4",
+        question: "Is this product eco-friendly?",
+        answer: "Yes! We use sustainable cotton sourced from certified farms, and our printing process uses water-based, non-toxic inks that are environmentally friendly."
+      }
+    ],
+    specifications: [
+      { label: "Material", value: "100% Premium Cotton" },
+      { label: "Weight", value: "150 - 180 gsm" },
+      { label: "Fit", value: "Classic Regular Fit" },
+      { label: "Care", value: "Machine wash cold, hang dry" },
+      { label: "Shrinkage", value: "Pre-shrunk, minimal shrinkage" },
+      { label: "Certification", value: "OEKO-TEX Standard 100 Certified" }
+    ]
   },
   {
     id: "2",
@@ -55,7 +142,58 @@ export const PRODUCTS: Product[] = [
     category: "New Arrivals",
     discount: "-20%",
     colors: [{ name: "Blue", hex: "#1e3a8a" }],
-    sizes: ["28", "30", "32", "34"]
+    sizes: ["28", "30", "32", "34"],
+    reviews: [
+      {
+        id: "1",
+        name: "Marcus L.",
+        rating: 4,
+        verified: true,
+        text: "Great fit and comfortable throughout the day. The denim feels quality and the color is true to the photos. Highly recommend!",
+        date: "August 20, 2023"
+      },
+      {
+        id: "2",
+        name: "Jessica H.",
+        rating: 3,
+        verified: true,
+        text: "Good jeans but took a while to break in. After a few wears, they became much more comfortable. Perfect for casual outings.",
+        date: "August 21, 2023"
+      },
+      {
+        id: "3",
+        name: "David C.",
+        rating: 4,
+        verified: true,
+        text: "Love the color and the fit is exactly as described. Great value for the price.",
+        date: "August 22, 2023"
+      }
+    ],
+    faqs: [
+      {
+        id: "1",
+        question: "Do these jeans shrink after washing?",
+        answer: "Minimal shrinkage expected. We recommend sizing according to our size guide. For best results, wash in cold water and hang dry."
+      },
+      {
+        id: "2",
+        question: "Are these 100% cotton?",
+        answer: "These jeans are made from 98% cotton and 2% elastane for stretch and comfort. The elastane helps them maintain their shape and recover from stretching."
+      },
+      {
+        id: "3",
+        question: "How long do these jeans typically last?",
+        answer: "With proper care, these jeans can last 2-3 years or longer. The quality denim and reinforced stitching ensure durability with regular wear and washing."
+      }
+    ],
+    specifications: [
+      { label: "Material", value: "98% Cotton, 2% Elastane" },
+      { label: "Weight", value: "12 oz Denim" },
+      { label: "Fit", value: "Skinny Fit" },
+      { label: "Rise", value: "Mid-Rise" },
+      { label: "Care", value: "Machine wash cold inside out, air dry" },
+      { label: "Inseam Options", value: "Multiple length options available" }
+    ]
   },
   {
     id: "3",
@@ -66,7 +204,50 @@ export const PRODUCTS: Product[] = [
     description: "A stylish checkered shirt that's perfect for casual and semi-formal occasions.",
     category: "New Arrivals",
     colors: [{ name: "Red/White", hex: "#ef4444" }],
-    sizes: ["Small", "Medium", "Large"]
+    sizes: ["Small", "Medium", "Large"],
+    reviews: [
+      {
+        id: "1",
+        name: "Ryan T.",
+        rating: 5,
+        verified: true,
+        text: "Perfect shirt for work and casual wear. The checkered pattern looks sharp and the quality is excellent. Very satisfied with this purchase.",
+        date: "August 23, 2023"
+      },
+      {
+        id: "2",
+        name: "Sophie B.",
+        rating: 4,
+        verified: true,
+        text: "Love the colors and the fit. It's versatile and can be dressed up or down. My only note is the sleeves could be a bit shorter.",
+        date: "August 24, 2023"
+      }
+    ],
+    faqs: [
+      {
+        id: "1",
+        question: "Is this shirt suitable for work?",
+        answer: "Absolutely! This checkered shirt is perfect for business casual environments. Pair it with neutral trousers for a professional look."
+      },
+      {
+        id: "2",
+        question: "What's the collar type?",
+        answer: "This shirt features a classic pointed collar that works well for a variety of occasions and style preferences."
+      },
+      {
+        id: "3",
+        question: "Can it be ironed?",
+        answer: "Yes, this shirt can be ironed. Use medium heat and iron on the reverse side for best results. It also has minimal wrinkles straight from the wash."
+      }
+    ],
+    specifications: [
+      { label: "Material", value: "100% Cotton" },
+      { label: "Weave", value: "Checkered Pattern" },
+      { label: "Collar Type", value: "Classic Pointed Collar" },
+      { label: "Sleeves", value: "Long Sleeves" },
+      { label: "Care", value: "Machine wash warm, dry clean safe" },
+      { label: "Fit", value: "Slim to Regular Fit" }
+    ]
   },
   {
     id: "4",
@@ -79,7 +260,45 @@ export const PRODUCTS: Product[] = [
     category: "New Arrivals",
     discount: "-30%",
     colors: [{ name: "Black", hex: "#000000" }],
-    sizes: ["Small", "Medium", "Large", "X-Large"]
+    sizes: ["Small", "Medium", "Large", "X-Large"],
+    reviews: [
+      {
+        id: "1",
+        name: "Chris M.",
+        rating: 5,
+        verified: true,
+        text: "Great t-shirt with a sporty vibe. The sleeve stripes add a nice touch. Fabric quality is really good for the price.",
+        date: "August 25, 2023"
+      },
+      {
+        id: "2",
+        name: "Nina R.",
+        rating: 4,
+        verified: true,
+        text: "Love how versatile this shirt is. Comfortable fit and the design is modern without being too trendy.",
+        date: "August 26, 2023"
+      }
+    ],
+    faqs: [
+      {
+        id: "1",
+        question: "What occasion is this shirt good for?",
+        answer: "This shirt is perfect for casual, sporty, and athletic settings. It's great for gym, casual outings, or layering under jackets."
+      },
+      {
+        id: "2",
+        question: "Is the stripe pattern durable?",
+        answer: "Yes, the stripe pattern is screen-printed with high-quality inks that are resistant to fading, even with regular washing."
+      }
+    ],
+    specifications: [
+      { label: "Material", value: "100% Premium Cotton" },
+      { label: "Weight", value: "160 gsm" },
+      { label: "Fit", value: "Regular Fit" },
+      { label: "Sleeve Style", value: "Short Sleeves with Striping" },
+      { label: "Care", value: "Machine wash cold, tumble dry low" },
+      { label: "Print Type", value: "Screen-printed graphics" }
+    ]
   },
   {
     id: "5",
@@ -92,7 +311,58 @@ export const PRODUCTS: Product[] = [
     category: "Top Selling",
     discount: "-20%",
     colors: [{ name: "Green/White", hex: "#166534" }],
-    sizes: ["Medium", "Large", "X-Large"]
+    sizes: ["Medium", "Large", "X-Large"],
+    reviews: [
+      {
+        id: "1",
+        name: "Victoria L.",
+        rating: 5,
+        verified: true,
+        text: "This shirt is absolutely stunning! The vertical stripes create such a flattering silhouette. Perfect for both casual and semi-formal occasions.",
+        date: "August 27, 2023"
+      },
+      {
+        id: "2",
+        name: "Thomas K.",
+        rating: 5,
+        verified: true,
+        text: "Excellent quality and the color combination is beautiful. The fabric drapes nicely and feels premium. Worth every penny!",
+        date: "August 28, 2023"
+      },
+      {
+        id: "3",
+        name: "Amanda W.",
+        rating: 5,
+        verified: true,
+        text: "Love how sophisticated this looks. The green and white combination is timeless and elegant.",
+        date: "August 29, 2023"
+      }
+    ],
+    faqs: [
+      {
+        id: "1",
+        question: "Do vertical stripes really elongate the silhouette?",
+        answer: "Yes! Vertical stripes create an optical illusion that makes the wearer appear taller and slimmer. It's a classic styling trick."
+      },
+      {
+        id: "2",
+        question: "What's the fabric composition?",
+        answer: "This shirt is made from a cotton-linen blend (70% cotton, 30% linen), which provides breathability and a sophisticated drape."
+      },
+      {
+        id: "3",
+        question: "Can it be worn in summer?",
+        answer: "Absolutely! The linen blend makes it lightweight and breathable, making it perfect for warm weather while maintaining an elegant look."
+      }
+    ],
+    specifications: [
+      { label: "Material", value: "70% Cotton, 30% Linen" },
+      { label: "Weight", value: "140 gsm" },
+      { label: "Fit", value: "Elegant Slim Fit" },
+      { label: "Pattern", value: "Vertical Stripes" },
+      { label: "Care", value: "Machine wash warm, hang dry" },
+      { label: "Breathability", value: "Highly breathable, ideal for warm weather" }
+    ]
   },
   {
     id: "6",
@@ -103,7 +373,45 @@ export const PRODUCTS: Product[] = [
     description: "Show your brave side with our Courage Graphic T-shirt. Soft cotton and a bold print.",
     category: "Top Selling",
     colors: [{ name: "Orange", hex: "#f97316" }],
-    sizes: ["Small", "Medium", "Large"]
+    sizes: ["Small", "Medium", "Large"],
+    reviews: [
+      {
+        id: "1",
+        name: "Jordan P.",
+        rating: 4,
+        verified: true,
+        text: "Bold and vibrant design! The orange color is striking and the shirt quality is great. Perfect for making a statement.",
+        date: "August 30, 2023"
+      },
+      {
+        id: "2",
+        name: "Bella S.",
+        rating: 4,
+        verified: true,
+        text: "Love the confidence this shirt gives! The graphic is well-printed and the fabric is comfortable.",
+        date: "August 31, 2023"
+      }
+    ],
+    faqs: [
+      {
+        id: "1",
+        question: "What does the graphic represent?",
+        answer: "The 'Courage' graphic is an inspiring design meant to motivate and empower the wearer. It's a statement piece for the bold and brave."
+      },
+      {
+        id: "2",
+        question: "Is the color lightfast?",
+        answer: "Yes, the orange dye is high-quality and lightfast. With proper care, the color will remain vibrant for years to come."
+      }
+    ],
+    specifications: [
+      { label: "Material", value: "100% Premium Cotton" },
+      { label: "Weight", value: "180 gsm" },
+      { label: "Fit", value: "Regular Fit" },
+      { label: "Print", value: "Bold Courage Graphic" },
+      { label: "Care", value: "Wash inside out, cold water, air dry" },
+      { label: "Color", value: "Vibrant Orange" }
+    ]
   },
   {
     id: "7",
@@ -114,7 +422,45 @@ export const PRODUCTS: Product[] = [
     description: "Comfortable and breezy bermuda shorts for those hot summer days.",
     category: "Top Selling",
     colors: [{ name: "Khaki", hex: "#f0e68c" }],
-    sizes: ["30", "32", "34", "36"]
+    sizes: ["30", "32", "34", "36"],
+    reviews: [
+      {
+        id: "1",
+        name: "Michael G.",
+        rating: 3,
+        verified: true,
+        text: "Good shorts for summer, comfortable fit. The color is accurate and they're true to size. Good value.",
+        date: "September 1, 2023"
+      },
+      {
+        id: "2",
+        name: "Lauren J.",
+        rating: 3,
+        verified: true,
+        text: "Perfect for beach trips and casual summer wear. They tend to wrinkle a bit, but nothing that can't be fixed with a quick iron.",
+        date: "September 2, 2023"
+      }
+    ],
+    faqs: [
+      {
+        id: "1",
+        question: "What length are these shorts?",
+        answer: "These are classic Bermuda length, hitting just above the knee. They're perfect for a smart-casual look."
+      },
+      {
+        id: "2",
+        question: "Are they suitable for all body types?",
+        answer: "Yes! The loose fit is designed to be comfortable for various body types. The knee-length style is flattering and versatile."
+      }
+    ],
+    specifications: [
+      { label: "Material", value: "100% Cotton" },
+      { label: "Length", value: "Bermuda (Above Knee)" },
+      { label: "Fit", value: "Loose Relaxed Fit" },
+      { label: "Pocket Style", value: "Side pockets and back pockets" },
+      { label: "Care", value: "Machine wash warm, tumble dry" },
+      { label: "Weight", value: "6-7 oz" }
+    ]
   },
   {
     id: "8",
@@ -125,7 +471,58 @@ export const PRODUCTS: Product[] = [
     description: "Faded skinny jeans that give you that perfect lived-in look and feel.",
     category: "Top Selling",
     colors: [{ name: "Light Blue", hex: "#add8e6" }],
-    sizes: ["28", "30", "32", "34"]
+    sizes: ["28", "30", "32", "34"],
+    reviews: [
+      {
+        id: "1",
+        name: "Kevin N.",
+        rating: 5,
+        verified: true,
+        text: "Love the faded look - it's exactly what I wanted. Great fit and the quality is excellent. These jeans are my new favorite pair.",
+        date: "September 3, 2023"
+      },
+      {
+        id: "2",
+        name: "Rachel E.",
+        rating: 4,
+        verified: true,
+        text: "Perfect vintage vibe! The fading is authentic-looking and the jeans are super comfortable. Highly recommend.",
+        date: "September 4, 2023"
+      },
+      {
+        id: "3",
+        name: "Derek M.",
+        rating: 4,
+        verified: true,
+        text: "Great quality skinny jeans. The faded wash gives them character without looking worn out.",
+        date: "September 5, 2023"
+      }
+    ],
+    faqs: [
+      {
+        id: "1",
+        question: "Is the faded look authentic?",
+        answer: "Yes! We use special techniques to create an authentic, lived-in faded look. Each pair has unique fading patterns."
+      },
+      {
+        id: "2",
+        question: "Will the fading continue after washing?",
+        answer: "The fading will be minimal with proper care. Washing in cold water and turning inside out helps preserve the faded finish."
+      },
+      {
+        id: "3",
+        question: "How fitted are these jeans?",
+        answer: "These are skinny fit, meaning they're snug through the hip, thigh, and leg. They taper at the ankle for a sleek look."
+      }
+    ],
+    specifications: [
+      { label: "Material", value: "98% Cotton, 2% Elastane" },
+      { label: "Weight", value: "11 oz Denim" },
+      { label: "Fit", value: "Skinny Fit" },
+      { label: "Rise", value: "Low to Mid-Rise" },
+      { label: "Finish", value: "Authentic Faded Wash" },
+      { label: "Care", value: "Wash cold inside out, line dry" }
+    ]
   },
 ];
 

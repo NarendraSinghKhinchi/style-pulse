@@ -1,15 +1,17 @@
 "use client"
 
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { FAQSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { Newsletter } from "@/components/newsletter"
+import { ProductDetailsSection } from "@/components/product-details-section"
 import { ProductGallery } from "@/components/product-gallery"
 import { ProductGridSection } from "@/components/product-grid-section"
 import { ProductInfo } from "@/components/product-info"
 import { ProductTabs } from "@/components/product-tabs"
 import { ReviewSection } from "@/components/review-section"
-import { PRODUCTS, REVIEWS } from "@/lib/constants"
+import { PRODUCTS } from "@/lib/constants"
 import { notFound } from "next/navigation"
 import * as React from "react"
 
@@ -50,20 +52,12 @@ export default function ProductPage({ params }: PageProps) {
                     <ProductTabs
                         activeTab={activeTab}
                         setActiveTab={setActiveTab}
-                        reviewCount={REVIEWS.length}
+                        reviewCount={product.reviews?.length || 0}
                     />
-                    <div className="container mx-auto px-4">
-                        {activeTab === "reviews" && <ReviewSection />}
-                        {activeTab === "details" && (
-                            <div className="py-20 text-center text-muted-foreground">
-                                Product specifications and detailed information content goes here.
-                            </div>
-                        )}
-                        {activeTab === "faq" && (
-                            <div className="py-20 text-center text-muted-foreground">
-                                Frequently Asked Questions content goes here.
-                            </div>
-                        )}
+                    <div className="container max-w-7xl mx-auto px-4">
+                        {activeTab === "reviews" && <ReviewSection reviews={product.reviews} />}
+                        {activeTab === "details" && <ProductDetailsSection specifications={product.specifications} />}
+                        {activeTab === "faq" && <FAQSection faqs={product.faqs} />}
                     </div>
                 </div>
 
